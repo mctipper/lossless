@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Lossless Run</title>
+
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="/shared/assets/styles.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- Jumbotron (populated by JS) -->
+    <div class="jumbotron">
+        <h1 class="display-4" id="gameTitle">Lossless {game}</h1>
+        <p class="lead" id="gameSubtitle"></p>
+        <small id="gameSmallText"></small>
+    </div>
+
+    <div class="container">
+        <!-- Stats Box -->
+        <div class="row">
+            <div id="statsbox-container" class="display-row">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-title">Attempts: <span id="totalAttempts">0</span></p>
+                                <p class="card-subtitle">Successes: <span id="totalSuccesses">0</span></p>
+                                <hr>
+                                <div id="playerDeathCounts"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-text mb-2"><i>Best Attempt</i> so far:</p>
+                                <p class="card-subtitle mb-2">
+                                    <i><strong id="furthestRunLevelName">Unknown Level</strong></i>
+                                </p>
+                                <p class="card-text">
+                                    <strong>￫ World <span id="furthestWorld">0</span>,
+                                            Level <span id="furthestLevel">0</span></strong>
+                                </p>
+                                <p class="card-text" id="bestAttemptOutcome">
+                                    Ruined By: <strong><span id="deathPlayer">Unknown</span>
+                                    (as <span id="deathCharacter">Unknown</span>)</strong>
+                                </p>
+                                <p class="card-text">Occurrences: <strong id="occurences">0</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Death Charts -->
+        <div class="row">
+            <div id="deathcharts-container" class="display-row">
+                <div class="row">
+                    <div class="col-12 text-left">
+                        <h2>Death Charts</h2>
+                        <p class="text-muted">Only attempt-ending deaths are counted.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3 chart">
+                        <canvas id="playerPieChart"></canvas>
+                    </div>
+                    <div class="col-md-3 chart">
+                        <canvas id="characterPieChart"></canvas>
+                    </div>
+                    <div class="col-md-6 chart">
+                        <canvas id="playerCharacterBarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Death Streak -->
+        <div class="row">
+            <div id="deathstreak-container" class="display-row">
+                <div class="row">
+                    <div class="col-12 text-left">
+                        <h2>Death Streak</h2>
+                        <p class="deathstreak-subtext text-muted">
+                            Current worst streak: <span id="worstStreakValue">0</span>
+                            by <span id="worstStreakPlayer">Unknown</span>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 chart">
+                        <canvas id="streakPlot"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Attempt Charts -->
+        <div class="row">
+            <div id="attempt-container" class="display-row">
+                <div class="row">
+                    <div class="col-12 text-left">
+                        <h2>Progress Per Attempt</h2>
+                        <p class="text-muted">Most recent first.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 chart">
+                        <canvas id="attemptBar"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="attempt-container" class="display-row">
+                <div class="row">
+                    <div class="col-12 text-left">
+                        <h2>Progress of Attempts</h2>
+                        <p class="text-muted">Sorted by attempt depth.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 chart">
+                        <canvas id="attemptBarByLevel"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shared Scripts -->
+    <script type="module" src="../shared/js/pages.js"></script>
+    <script type="module" src="../shared/js/main.js"></script>
+
+</body>
+</html>

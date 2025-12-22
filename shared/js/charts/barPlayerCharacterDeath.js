@@ -1,6 +1,4 @@
-import { playerColours, characterColours } from './colours.js';
-
-export function buildPlayerCharacterDeathBarChart(gameModels) {
+export function buildPlayerCharacterDeathBarChart(gameModels, colours) {
     // rem successful attempts because only deaths
     const filteredModels = gameModels.filter(game => !game.success);
 
@@ -72,14 +70,14 @@ export function buildPlayerCharacterDeathBarChart(gameModels) {
     // Player border
     chart.data.datasets[0].borderColor = playerCharacters.map(label => {
         const [player] = label.split('-');
-        return playerColours[player] || 'gray';
+        return colours[player].colour || 'gray';
     });
     chart.data.datasets[0].borderWidth = 4;
 
     // Character fill
     chart.data.datasets[0].backgroundColor = playerCharacters.map(label => {
         const [_, character] = label.split('-');
-        return characterColours[character] || 'gray';
+        return colours[character].colour || 'gray';
     });
 
     // Integer x-axis

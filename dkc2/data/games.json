@@ -19,7 +19,7 @@
         "date": "2025-01-18",
         "world": "1",
         "level": "5",
-        "deathPlayer": "Mog",
+        "deathPlayer": "Mogs",
         "deathCharacter": "Diddy",
         "success": false
     },
@@ -27,7 +27,7 @@
         "date": "2025-01-18",
         "world": "3",
         "level": "1",
-        "deathPlayer": "Mog",
+        "deathPlayer": "Mogs",
         "deathCharacter": "Diddy",
         "success": false
     },
@@ -35,7 +35,7 @@
         "date": "2025-01-18",
         "world": "3",
         "level": "2",
-        "deathPlayer": "Mog",
+        "deathPlayer": "Mogs",
         "deathCharacter": "Diddy",
         "success": false
     },
@@ -43,7 +43,7 @@
         "date": "2025-03-25",
         "world": "1",
         "level": "1",
-        "deathPlayer": "Mog",
+        "deathPlayer": "Mogs",
         "deathCharacter": "Dixie",
         "success": false
     },
@@ -51,7 +51,7 @@
         "date": "2025-03-25",
         "world": "2",
         "level": "5",
-        "deathPlayer": "Mog",
+        "deathPlayer": "Mogs",
         "deathCharacter": "Dixie",
         "success": false
     },
@@ -91,7 +91,7 @@
         "date": "2025-08-16",
         "world": "3",
         "level": "3",
-        "deathPlayer": "Mog",
+        "deathPlayer": "Mogs",
         "deathCharacter": "Diddy",
         "success": false
     },
@@ -99,7 +99,7 @@
         "date": "2025-08-16",
         "world": "3",
         "level": "3",
-        "deathPlayer": "Mog",
+        "deathPlayer": "Mogs",
         "deathCharacter": "Dixie",
         "success": false
     },
@@ -107,7 +107,7 @@
         "date": "2025-08-16",
         "world": "2",
         "level": "4",
-        "deathPlayer": "Mog",
+        "deathPlayer": "Mogs",
         "deathCharacter": "Dixie",
         "success": false
     },
@@ -115,7 +115,7 @@
         "date": "2025-08-16",
         "world": "3",
         "level": "4",
-        "deathPlayer": "Mog",
+        "deathPlayer": "Mogs",
         "deathCharacter": "Dixie",
         "success": false
     },
@@ -123,7 +123,7 @@
         "date": "2025-08-16",
         "world": "2",
         "level": "5",
-        "deathPlayer": "Mog",
+        "deathPlayer": "Mogs",
         "deathCharacter": "Dixie",
         "success": false
     },
@@ -131,7 +131,7 @@
         "date": "2025-08-16",
         "world": "3",
         "level": "4",
-        "deathPlayer": "Mog",
+        "deathPlayer": "Mogs",
         "deathCharacter": "Dixie",
         "success": false
     },
@@ -139,7 +139,7 @@
         "date": "2025-08-16",
         "world": "1",
         "level": "3",
-        "deathPlayer": "Mog",
+        "deathPlayer": "Mogs",
         "deathCharacter": "Dixie",
         "success": false
     },

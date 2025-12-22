@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lossless DKC2</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <title>Lossless {game}</title>
+    <link rel="stylesheet" href="shared/assets/styles.css">
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
@@ -16,136 +16,18 @@
 
 <body>
     <div class="jumbotron">
-        <h1 class="display-4">Lossless DKC2</h1>
-        <p class="lead">Completing Donkey Kong Country 2 without losing a life, in a single run. <i>Death results in
-                a restart.</i></p>
+        <h1 class="display-4">Lossless {game}</h1>
+        <p class="lead">Publically documenting the shame of being unable to complete these games without losing a
+            life.</i></p>
         <small>We're not very good.</small>
     </div>
     <div class="container">
-        <!-- Stats Box -->
-        <div class="row">
-            <div id="statsbox-container" class="display-row">
-                <div class="row">
-                    <!-- Card 1: Stats Left -->
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-title">Attempts: <span id="totalAttempts">0</span></p>
-                                <p class="card-subtitle">Successes: <span id="totalSuccesses">0</span></p>
-                                <hr>
-                                <!-- Dynamic list of player deaths -->
-                                <div id="playerDeathCounts"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 2: Stats Right -->
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text mb-2"><i>Best Attempt</i> so far:</p>
-                                <p class="card-subtitle mb-2">
-                                    <strong>World <span id="furthestWorld">0</span>, Level <span
-                                            id="furthestLevel">0</span></strong><br>
-                                    <i><strong id="furthestRunLevelName">Unknown Level</strong></i>
-                                </p>
-                                <!-- note: this text will be replaced entirely if ever was a successful run -->
-                                <p class="card-text" id="bestAttemptOutcome">
-                                    Ruined By: <strong><span id="deathPlayer">Unknown</span> (as <span
-                                            id="deathCharacter">Unknown</span>)</strong>
-                                </p>
-                                <p class="card-text">Occurences: <strong id="occurences">0</strong></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Death Charts -->
-        <div class="row">
-            <div id="deathcharts-container" class="display-row">
-                <div class="row">
-                    <div class="col-12 text-left">
-                        <h2>Death Charts</h2>
-                        <p class="text-muted">Only attempt ending deaths are counted. You ruin it and you're on the
-                            board.</p>
-                    </div>
-                </div>
-                <!-- Second Row: Three Columns for Charts -->
-                <div class="row">
-                    <div class="col-md-3 chart">
-                        <canvas id="playerPieChart"></canvas>
-                    </div>
-                    <div class="col-md-3 chart">
-                        <canvas id="characterPieChart"></canvas>
-                    </div>
-                    <div class="col-md-6 chart">
-                        <canvas id="playerCharacterBarChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Death Streak -->
-        <div class="row">
-            <div id="deathstreak-container" class="display-row">
-                <div class="row">
-                    <div class="col-12 text-left">
-                        <h2>Death Streak</h2>
-                        <p class="deathstreak-subtext text-muted">
-                            Representing combined hopelessness visually. The current worst streak is <span
-                                id="worstStreakValue">abs(streakvalue)</span> by <span
-                                id="worstStreakPlayer">player</span>.
-                        </p>
-                    </div>
-                </div>
-                <!-- Second Row: Chart -->
-                <div class="row">
-                    <div class="col-md-12 chart">
-                        <canvas id="streakPlot"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Attempt Charts -->
-        <div class="row">
-            <div id="attempt-container" class="display-row">
-                <div class="row">
-                    <div class="col-12 text-left">
-                        <h2>Progress Per Attempt</h2>
-                        <p class="text-muted">
-                            Progress made during each attempt, coloured by who ruined it. Most recent descending.</span>
-                        </p>
-                    </div>
-                </div>
-                <!-- Second Row: Chart -->
-                <div class="row">
-                    <div class="col-md-12 chart">
-                        <canvas id="attemptBar"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div id="attempt-container" class="display-row">
-                <div class="row">
-                    <div class="col-12 text-left">
-                        <h2>Progress of Attempts</h2>
-                        <p class="text-muted">
-                            Progress made during each attempt, coloured by who ruined it. Sorted by attempt
-                            depth.</span>
-                        </p>
-                    </div>
-                </div>
-                <!-- Second Row: Chart -->
-                <div class="row">
-                    <div class="col-md-12 chart">
-                        <canvas id="attemptBarByLevel"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <ul>
+            <li><a href="/dkc2/">Donkey Kong Country 2</a></li>
+            <li><a href="/smb3/">Super Mario Bros. 3</a></li>
+            <li><a href="/smb/">Super Mario Bros.</a></li>
+        </ul>
     </div>
-    <!-- Data Rendering Script, load after render -->
-    <script src="js/main.js" type="module"></script>
 </body>
 
 </html>

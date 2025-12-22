@@ -1,6 +1,4 @@
-import { playerColours, successColour } from './colours.js';
-
-export function buildStreakPlot(gameModels) {
+export function buildStreakPlot(gameModels, colours) {
     // a bit of computation needed to determine streakage
 
     // initial values
@@ -16,7 +14,7 @@ export function buildStreakPlot(gameModels) {
         } else if (game.deathPlayer === "Shag") {
             score += 1;
             currentStreak = currentStreak >= 0 ? currentStreak + 1 : 1;
-        } else if (game.deathPlayer === "Mog") {
+        } else if (game.deathPlayer === "Mogs") {
             score -= 1;
             currentStreak = currentStreak <= 0 ? currentStreak - 1 : -1;
         }
@@ -24,7 +22,8 @@ export function buildStreakPlot(gameModels) {
         streakData.push({
             x: index + 1,
             y: score,
-            player: game.success ? successColour : game.deathPlayer,
+            colour: game.success ? successColour : colours[game.deathPlayer].colour,
+            player: game.success ? "Success" : game.deathPlayer,
             streak: currentStreak,
             success: game.success
         });
@@ -64,14 +63,14 @@ export function buildStreakPlot(gameModels) {
                         borderColor: ctx => {
                             const index = ctx.p1DataIndex;
                             const point = streakData[index];
-                            return point.success ? successColour : playerColours[point.player] || 'gray';
+                            return point.success ? successColour : colours[point.player].colour || 'gray';
                         },
                     },
                     pointBackgroundColor: streakData.map(point =>
-                        point.success ? successColour : playerColours[point.player] || 'gray'
+                        point.colour || 'gray'
                     ),
                     pointBorderColor: streakData.map(point =>
-                        point.success ? successColour : playerColours[point.player] || 'gray'
+                        point.colour || 'gray'
                     ),
                     pointBorderWidth: 2,
                 },
@@ -89,7 +88,7 @@ export function buildStreakPlot(gameModels) {
                     max: yMax,
                     title: {
                         display: true,
-                        text: '(-ve) Mog Deaths | Shag Deaths (+ve)', // manually set to appear on each side of the x-axis line
+                        text: '(-ve) Mogs Deaths | Shag Deaths (+ve)', // manually set to appear on each side of the x-axis line
                     },
                     ticks: {
                         stepSize: 5,

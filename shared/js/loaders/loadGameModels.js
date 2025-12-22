@@ -1,10 +1,11 @@
 import { GameModel } from '../models/game.js';
 
-export async function loadGameModels() {
-    // actually loads the data from the json files, and parses it out
+export async function loadGameModels(page) {
     try {
-        const gamesPath = 'data/games.json'
-        const levelsPath = 'data/levels.json'
+        const base = `/${page}/data`;
+
+        const gamesPath = `${base}/games.json`;
+        const levelsPath = `${base}/levels.json`;
 
         const [gamesResponse, levelsResponse] = await Promise.all([
             fetch(gamesPath),
@@ -14,7 +15,6 @@ export async function loadGameModels() {
         const gamesData = await gamesResponse.json();
         const levelsData = await levelsResponse.json();
 
-        // flatten to list and map to our GameModel objects because neatness
         const flattenedGamesData = Object.values(gamesData);
         const gameModels = flattenedGamesData.map(entry => {
             return new GameModel(
@@ -24,13 +24,12 @@ export async function loadGameModels() {
                 entry.level,
                 entry.deathPlayer,
                 entry.deathCharacter,
-                levelsData // levels data used to compute the level name
+                levelsData
             );
         });
 
         return { gameModels, levelsData };
     } catch (error) {
-        // any error, cant render anything so just give up
         console.error("Error loading game or level data:", error);
     }
 }

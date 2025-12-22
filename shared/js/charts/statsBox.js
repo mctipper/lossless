@@ -54,9 +54,9 @@ export function buildStatsBox(gameModels) {
     });
 
     // rhs
+    document.getElementById("furthestRunLevelName").textContent = furthestRunLevelName;
     document.getElementById("furthestWorld").textContent = furthestRun.world || 0;
     document.getElementById("furthestLevel").textContent = furthestRun.level || 0;
-    document.getElementById("furthestRunLevelName").textContent = furthestRunLevelName;
     document.getElementById("occurences").textContent = occurences;
 
     // update the outcome text dynamically (ie. remove negative comments when success ever achieved)

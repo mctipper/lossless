@@ -1,4 +1,3 @@
-import { playerColours, characterColours, successColour } from './colours.js';
 
 function buildLevelAttemptAxis(levelsData) {
     const levelMap = [];
@@ -29,7 +28,7 @@ function buildLevelAttemptAxis(levelsData) {
     return levelMap;
 }
 
-export function buildAttemptBar(gameModels, levelsData, sortedByLevel = false) {
+export function buildAttemptBar(gameModels, levelsData, colours, sortedByLevel = false) {
     const levelMap = buildLevelAttemptAxis(levelsData);
 
     let modelsForChart = {}
@@ -52,6 +51,7 @@ export function buildAttemptBar(gameModels, levelsData, sortedByLevel = false) {
         const AttemptX = AttemptLevel ? AttemptLevel.x : maxX; // if null, make it full length as success wont have Attempt indicator
 
         const isSuccess = attempt.success;
+        const colour = isSuccess ? colours["Success"].colour : colours[attempt.deathPlayer].colour || 'gray'
 
         return {
             label: `Attempt ${modelsForChart.length - index}`,
@@ -63,12 +63,11 @@ export function buildAttemptBar(gameModels, levelsData, sortedByLevel = false) {
                     success: attempt.success,
                     deathPlayer: attempt.deathPlayer,
                     deathCharacter: attempt.deathCharacter,
-                    deathWorldLevel: `${attempt.world}-${attempt.level}`,
                     deathLevelName: attempt.level_name
                 }
             ],
-            backgroundColor: isSuccess ? successColour : playerColours[attempt.deathPlayer] || 'gray',
-            borderColor: isSuccess ? successColour : playerColours[attempt.deathPlayer] || 'gray',
+            backgroundColor: colour,
+            borderColor: colour,
             borderWidth: 20,
         };
     });
@@ -137,7 +136,6 @@ export function buildAttemptBar(gameModels, levelsData, sortedByLevel = false) {
                                     `Player: ${attempt.deathPlayer}`,
                                     `Character: ${attempt.deathCharacter}`,
                                     `Level: ${attempt.deathLevelName}`,
-                                    `World-Level: ${attempt.deathWorldLevel}`,
                                 ];
                             }
                         },
@@ -174,12 +172,12 @@ export function buildAttemptBar(gameModels, levelsData, sortedByLevel = false) {
                             );
                             ctx.fillStyle = isSuccess
                                 ? successColour
-                                : characterColours[attempt.deathCharacter] || 'gray';
+                                : colours[attempt.deathCharacter].colour || 'gray';
                             ctx.fill();
                             ctx.lineWidth = 3;
                             ctx.strokeStyle = isSuccess
                                 ? successColour
-                                : playerColours[attempt.deathPlayer] || 'gray';
+                                : colours[attempt.deathPlayer].colour || 'gray';
                             ctx.stroke();
                         });
                     });

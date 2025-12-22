@@ -1,53 +1,51 @@
-import { playerColours } from "./colours.js";
-
-export function buildPiePlayerDeath(gameModels) {
+export function buildPieCharacterDeath(gameModels, colours) {
     // only care for unsuccessful attempts
     const filteredModels = gameModels.filter(game => !game.success);
 
     // minor data wrangling needed
-    const playerCounts = {};
+    const characterCounts = {};
     filteredModels.forEach(game => {
-        playerCounts[game.deathPlayer] = (playerCounts[game.deathPlayer] || 0) + 1;
+        characterCounts[game.deathCharacter] = (characterCounts[game.deathCharacter] || 0) + 1;
     });
 
-    const playerNames = Object.keys(playerCounts);
-    const playerNameDeathCounts = Object.values(playerCounts);
+    const characterNames = Object.keys(characterCounts);
+    const characterDeathCounts = Object.values(characterCounts);
 
     // render the chart
-    const pieCtx = document.getElementById("playerPieChart").getContext("2d");
+    const pieCtx = document.getElementById('characterPieChart').getContext('2d');
     const chart = new Chart(pieCtx, {
         type: "pie",
         data: {
-            labels: playerNames,
+            labels: characterNames,
             datasets: [{
-                data: playerNameDeathCounts
-            }]
+                data: characterDeathCounts
+            }],
         },
         options: {
             responsive: true,
             plugins: {
                 legend: {
-                    display: false
+                    display: false,
                 },
                 datalabels: {
-                    color: "#FFFFFF",
+                    color: "#000000",
                     font: {
                         size: 14,
-                        weight: "bold"
+                        weight: "bold",
                     },
                     formatter: (value, context) => {
                         const label = context.chart.data.labels[context.dataIndex];
                         return `${label}: ${value}`;
-                    }
-                }
-            }
+                    },
+                },
+            },
         },
         plugins: [ChartDataLabels]
     });
 
     // custom formatting
-    chart.data.datasets[0].backgroundColor = playerNames.map(player => playerColours[player] || "gray");
-    chart.data.datasets[0].borderColor = playerNames.map(() => "#FFFFFF");
+    chart.data.datasets[0].backgroundColor = characterNames.map(character => colours[character]?.colour || 'gray');
+    chart.data.datasets[0].borderColor = characterNames.map(() => '#FFFFFF');
     chart.data.datasets[0].borderWidth = 1;
 
     chart.update();
