@@ -9,7 +9,7 @@ import { buildPlayerCharacterDeathBarChart } from './charts/barPlayerCharacterDe
 import { buildStreakPlot } from './charts/linePlayerDeathStreak.js'
 import { buildAttemptBar } from './charts/barAttempt.js'
 
-(async function main() {
+(async function game() {
     try {
         const page = getPageName();
 
