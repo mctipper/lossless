@@ -30,7 +30,7 @@ body {
 }
 
 .landing-card:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
 }
 
@@ -39,16 +39,14 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.3),
-        rgba(0,0,0,0.7)
-    );
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.7));
     z-index: 0;
     pointer-events: none;
 }
 
-.landing-card > * {
+.landing-card>* {
     position: relative;
     z-index: 1;
 }
@@ -77,16 +75,18 @@ body {
 .landing-card .basic-stats {
     color: white;
     text-shadow:
-        0 0 6px rgba(0,0,0,0.9),
-        0 0 12px rgba(0,0,0,0.8),
-        0 0 18px rgba(0,0,0,0.7);
+        0 0 6px rgba(0, 0, 0, 0.9),
+        0 0 12px rgba(0, 0, 0, 0.8),
+        0 0 18px rgba(0, 0, 0, 0.7);
 }
 
 /* backgrounds */
 .landing-card[data-game="dkc2"] {
     background-image: url("images/dkc2.jpg");
-    background-size: 180%;       /* zoom in */
-    background-position: 40% 20%; /* shift horizontally & vertically */
+    background-size: 180%;
+    /* zoom in */
+    background-position: 40% 20%;
+    /* shift horizontally & vertically */
 }
 
 .landing-card[data-game="smb3"] {
@@ -97,7 +97,7 @@ body {
 
 .landing-card[data-game="smb"] {
     background-image: url("images/smb.png");
-        background-size: 100%;
+    background-size: 100%;
     background-position: 80% 20%;
 }
 
@@ -111,24 +111,39 @@ body {
     .jumbotron {
         transform: scale(0.85);
         transform-origin: top center;
-        margin-bottom: -20px; /* pulls content up to compensate */
+        margin-bottom: -20px;
+        /* pulls content up to compensate */
     }
 }
-
-
 
 .parent-container {
     display: flex;
 }
 
 .display-row {
-    padding: 24px;
+    padding: 16px;
     background-color: white;
     border: 1px solid #ddd;
-    margin: 16px;
+    margin: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .attempt-heading {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .attempt-heading {
+        font-size: 1.25rem;
+    }
+
+    .text-muted {
+        font-size: 0.85rem;
+    }
 }
 
 span {
@@ -143,9 +158,20 @@ span {
     font-size: 0.9em;
 }
 
+.pie-pair {
+    align-items: center;
+}
+
+.pie-pair .chart {
+    min-width: 120px;
+    /* prevents shrinking too small */
+}
+
+
 /* statsbox */
 .card {
-    border: none !important; /* override card default */
+    border: none !important;
+    /* override card default */
 }
 
 .card-title {

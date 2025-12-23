@@ -97,20 +97,19 @@ export function buildAttemptBar(attemptModels, levelsData, colours, sortedByLeve
             scales: {
                 x: {
                     type: 'linear',
+                    position: 'top',
                     min: 1,
                     max: levelMap[levelMap.length - 1]?.x || 10, // extend to last x value as fixed
-                    title: {
-                        display: true,
-                        text: 'Attempt Depth'
-                    },
                     ticks: {
+                        autoSkip: false,
+                        position: 'top',
                         callback: (value) => {
                             // find a matching world anchor
                             const worldAnchor = levelMap.find(l => l.x === value && l.level === '0');
                             if (worldAnchor) {
-                                return worldAnchor.name; // "World 1", "World 2", etc.
+                                return worldAnchor.name;
                             }
-                            return ''; // hide decimal ticks
+                            return undefined; // 
                         }
                     }
 
