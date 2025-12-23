@@ -11,28 +11,36 @@ body {
 }
 
 .landing-card {
-    display: block;
-    background: #fff;
+    position: relative;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 1rem;
     text-decoration: none;
     color: inherit;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    background: white;
+    transition: box-shadow 0.2s, transform 0.1s;
 }
 
 .landing-card:hover {
-    transform: translateY(-4px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
 }
 
-.landing-card img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 0.75rem;
+.landing-card::after {
+    content: "↗";
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    font-size: 1.4rem;
+    opacity: 0.4;
+    transition: opacity 0.2s, transform 0.2s;
 }
+
+.landing-card:hover::after {
+    opacity: 0.8;
+    transform: translateX(4px);
+}
+
 
 .landing-card h3 {
     margin: 0 0 0.5rem;
