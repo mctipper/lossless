@@ -10,13 +10,23 @@ body {
     margin: 1rem 0 2rem;
 }
 
+/* single card when skinny */
+@media (max-width: 1000px) {
+    .landing-card-grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        grid-auto-columns: unset;
+        grid-auto-flow: unset;
+    }
+}
+
 .landing-card {
     position: relative;
     padding: 1.5rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     text-decoration: none;
-    transition: box-shadow 0.2s, transform 0.1s;
+    transition: transform 0.2s, box-shadow 0.2s, width 0.2s;
 }
 
 .landing-card:hover {
@@ -91,15 +101,21 @@ body {
     background-position: 80% 20%;
 }
 
-
-
-
 /* general */
 
 .jumbotron {
     text-align: center;
-    padding-left: 20px; /* text indent */
 }
+
+@media (max-width: 600px) {
+    .jumbotron {
+        transform: scale(0.85);
+        transform-origin: top center;
+        margin-bottom: -20px; /* pulls content up to compensate */
+    }
+}
+
+
 
 .parent-container {
     display: flex;
