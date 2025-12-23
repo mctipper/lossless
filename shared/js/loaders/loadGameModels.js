@@ -2,7 +2,7 @@ import { GameModel } from '../models/game.js';
 
 export async function loadGameModels(page) {
     try {
-        const base = `/${page}/data`;
+        const base = `${page}/data`;
 
         const gamesPath = `${base}/games.json`;
         const levelsPath = `${base}/levels.json`;

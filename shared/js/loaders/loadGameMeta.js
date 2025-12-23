@@ -1,5 +1,6 @@
 export async function loadGameMeta(page) {
-    const base = `/${page}/data`;
+    console.log(page);
+    const base = `${page}/data`;
 
     const [aboutRes, coloursRes] = await Promise.all([
         fetch(`${base}/about.json`),
