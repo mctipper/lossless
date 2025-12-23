@@ -1,5 +1,5 @@
 import { getPageName } from './pages.js';
-import { loadGameModels } from './loaders/loadGameModels.js';
+import { loadAttemptModels } from './loaders/loadAttemptModels.js';
 import { loadGameMeta } from './loaders/loadGameMeta.js';
 
 import { buildStatsBox } from './charts/statsBox.js'
@@ -14,7 +14,7 @@ import { buildAttemptBar } from './charts/barAttempt.js'
         const page = getPageName();
 
         // load up the games for THIS page
-        const { gameModels, levelsData } = await loadGameModels(page);
+        const { attemptModels, levelsData } = await loadAttemptModels(page);
         const { about, colours } = await loadGameMeta(page);
 
 
@@ -26,19 +26,19 @@ import { buildAttemptBar } from './charts/barAttempt.js'
 
 
         // stats box
-        buildStatsBox(gameModels);
+        buildStatsBox(attemptModels);
 
         // death charts
-        buildPiePlayerDeath(gameModels, colours);
-        buildPieCharacterDeath(gameModels, colours);
-        buildPlayerCharacterDeathBarChart(gameModels, colours);
+        buildPiePlayerDeath(attemptModels, colours);
+        buildPieCharacterDeath(attemptModels, colours);
+        buildPlayerCharacterDeathBarChart(attemptModels, colours);
 
         // death streak
-        buildStreakPlot(gameModels, colours);
+        buildStreakPlot(attemptModels, colours);
 
         // game attempt
-        buildAttemptBar(gameModels, levelsData, colours);
-        buildAttemptBar(gameModels, levelsData, colours, true);
+        buildAttemptBar(attemptModels, levelsData, colours);
+        buildAttemptBar(attemptModels, levelsData, colours, true);
 
     } catch (error) {
         console.error("Error in render script:", error);

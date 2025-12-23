@@ -1,10 +1,10 @@
-export function buildStatsBox(gameModels) {
+export function buildStatsBox(attemptModels) {
     // data wrangling for lhs
-    const totalAttempts = gameModels.length;
-    const totalSuccesses = gameModels.filter(entry => entry.success).length;
+    const totalAttempts = attemptModels.length;
+    const totalSuccesses = attemptModels.filter(entry => entry.success).length;
 
     // player deaths dynamic build
-    const playerDeaths = gameModels.reduce((acc, entry) => {
+    const playerDeaths = attemptModels.reduce((acc, entry) => {
         if (!entry.success) { // only count deaths for non-successful attempts
             const playerName = entry.deathPlayer || "Unknown";
             acc[playerName] = (acc[playerName] || 0) + 1;
@@ -19,17 +19,17 @@ export function buildStatsBox(gameModels) {
     const orderedPlayerDeaths = Object.fromEntries(sortedPlayerDeaths);
 
     // data wrangling for rhs
-    const furthestRun = gameModels.reduce((max, entry) => {
+    const furthestRun = attemptModels.reduce((max, entry) => {
         const current = parseInt(entry.world) * 100 + parseInt(entry.level);
         return current > max.value ? { ...entry, value: current } : max;
     }, { value: 0 });
 
     const furthestRunLevelName = furthestRun.level_name || "Unknown Level";
-    const occurences = gameModels.filter(
+    const occurences = attemptModels.filter(
         entry => entry.world === furthestRun.world && entry.level === furthestRun.level
     ).length;
 
-    const hasSuccess = gameModels.some(
+    const hasSuccess = attemptModels.some(
         entry => entry.world === furthestRun.world && entry.level === furthestRun.level && entry.success
     );
 

@@ -1,6 +1,6 @@
-import { GameModel } from '../models/game.js';
+import { AttemptModel } from '../models/game.js';
 
-export async function loadGameModels(page) {
+export async function loadAttemptModels(page) {
     try {
         const base = `${page}/data`;
 
@@ -16,8 +16,8 @@ export async function loadGameModels(page) {
         const levelsData = await levelsResponse.json();
 
         const flattenedGamesData = Object.values(gamesData);
-        const gameModels = flattenedGamesData.map(entry => {
-            return new GameModel(
+        const attemptModels = flattenedGamesData.map(entry => {
+            return new AttemptModel(
                 entry.date,
                 entry.success,
                 entry.world,
@@ -28,7 +28,7 @@ export async function loadGameModels(page) {
             );
         });
 
-        return { gameModels, levelsData };
+        return { attemptModels, levelsData };
     } catch (error) {
         console.error("Error loading game or level data:", error);
     }

@@ -1,4 +1,4 @@
-export function buildStreakPlot(gameModels, colours) {
+export function buildStreakPlot(attemptModels, colours) {
     // a bit of computation needed to determine streakage
 
     // initial values
@@ -7,7 +7,7 @@ export function buildStreakPlot(gameModels, colours) {
     let currentStreak = 0;
     let worstStreak = { value: 0, player: null };
 
-    gameModels.forEach((game, index) => {
+    attemptModels.forEach((game, index) => {
         if (game.success) {
             // reset streak (but leave current score)
             currentStreak = 0;

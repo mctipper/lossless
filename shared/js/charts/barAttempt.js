@@ -28,14 +28,14 @@ function buildLevelAttemptAxis(levelsData) {
     return levelMap;
 }
 
-export function buildAttemptBar(gameModels, levelsData, colours, sortedByLevel = false) {
+export function buildAttemptBar(attemptModels, levelsData, colours, sortedByLevel = false) {
     const levelMap = buildLevelAttemptAxis(levelsData);
 
     let modelsForChart = {}
     if (!sortedByLevel) {
-        modelsForChart = gameModels.reverse(); // reverse the order so the most recent attempt is at the top
+        modelsForChart = attemptModels.reverse(); // reverse the order so the most recent attempt is at the top
     } else {
-        modelsForChart = [...gameModels].sort((a, b) => {
+        modelsForChart = [...attemptModels].sort((a, b) => {
             const aLevel = levelMap.find(l => l.world === a.world && l.level === a.level);
             const bLevel = levelMap.find(l => l.world === b.world && l.level === b.level);
             const aX = aLevel ? aLevel.x : 0;

@@ -1,6 +1,6 @@
-export function buildPiePlayerDeath(gameModels, colours) {
+export function buildPiePlayerDeath(attemptModels, colours) {
     // only care for unsuccessful attempts
-    const filteredModels = gameModels.filter(game => !game.success);
+    const filteredModels = attemptModels.filter(game => !game.success);
 
     // minor data wrangling needed
     const playerCounts = {};

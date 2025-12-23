@@ -1,4 +1,4 @@
-export class GameModel {
+export class AttemptModel {
     // where and who cause this death
     constructor(date, success, world, level, deathPlayer, deathCharacter, levelsData) {
         this.date = date;

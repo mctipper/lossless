@@ -1,6 +1,6 @@
-export function buildPlayerCharacterDeathBarChart(gameModels, colours) {
+export function buildPlayerCharacterDeathBarChart(attemptModels, colours) {
     // rem successful attempts because only deaths
-    const filteredModels = gameModels.filter(game => !game.success);
+    const filteredModels = attemptModels.filter(game => !game.success);
 
     const playerCharacterGroupings = {};
 
