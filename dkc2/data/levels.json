@@ -1,57 +1,78 @@
 {
     "1": {
-        "1": "Pirate Panic",
-        "2": "Mainbrace Mayhem",
-        "3": "Gangplank Galley",
-        "4": "Lockjaw's Locker",
-        "5": "Topsail Trouble",
-        "6": "Krow's Nest"
+        "name": "Gangplank Galleon",
+        "levels": {
+            "1": "Pirate Panic",
+            "2": "Mainbrace Mayhem",
+            "3": "Gangplank Galley",
+            "4": "Lockjaw's Locker",
+            "5": "Topsail Trouble",
+            "6": "Krow's Nest"
+        }
     },
     "2": {
-        "1": "Hot-Head Hop",
-        "2": "Kannon's Klaim",
-        "3": "Lava Lagoon",
-        "4": "Red-Hot Ride",
-        "5": "Squawk's Shaft",
-        "6": "Kleever's Kiln"
+        "name": "Crocodile Cauldron",
+        "levels": {
+            "1": "Hot-Head Hop",
+            "2": "Kannon's Klaim",
+            "3": "Lava Lagoon",
+            "4": "Red-Hot Ride",
+            "5": "Squawk's Shaft",
+            "6": "Kleever's Kiln"
+        }
     },
     "3": {
-        "1": "Barrel Bayou",
-        "2": "Glimmer's Galleon",
-        "3": "Krockhead Klamber",
-        "4": "Rattle Battle",
-        "5": "Slime Climb",
-        "6": "Bramble Blast",
-        "7": "Kudgel's Kontest"
+        "name": "Krem Quay",
+        "levels": {
+            "1": "Barrel Bayou",
+            "2": "Glimmer's Galleon",
+            "3": "Krockhead Klamber",
+            "4": "Rattle Battle",
+            "5": "Slime Climb",
+            "6": "Bramble Blast",
+            "7": "Kudgel's Kontest"
+        }
     },
     "4": {
-        "1": "Hornet Hole",
-        "2": "Target Terror",
-        "3": "Bramble Scramble",
-        "4": "Rickety Race",
-        "5": "Mudhole Marsh",
-        "6": "Rambi Rumble",
-        "7": "King Zing Sting"
+        "name": "Krazy Kremland",
+        "levels": {
+            "1": "Hornet Hole",
+            "2": "Target Terror",
+            "3": "Bramble Scramble",
+            "4": "Rickety Race",
+            "5": "Mudhole Marsh",
+            "6": "Rambi Rumble",
+            "7": "King Zing Sting"
+        }
     },
     "5": {
-        "1": "Ghostly Grove",
-        "2": "Haunted Hall",
-        "3": "Gusty Glade",
-        "4": "Parrot Chute Panic",
-        "5": "Web Woods",
-        "6": "Kreepy Krow"
+        "name": "Gloomy Gulch",
+        "levels": {
+            "1": "Ghostly Grove",
+            "2": "Haunted Hall",
+            "3": "Gusty Glade",
+            "4": "Parrot Chute Panic",
+            "5": "Web Woods",
+            "6": "Kreepy Krow"
+        }
     },
     "6": {
-        "1": "Arctic Abyss",
-        "2": "Windy Well",
-        "3": "Castle Crush",
-        "4": "Clapper's Cavern",
-        "5": "Chain Link Chamber",
-        "6": "Toxic Tower",
-        "7": "Stronghold Showdown"
+        "name": "K. Rool's Keep",
+        "levels": {
+            "1": "Arctic Abyss",
+            "2": "Windy Well",
+            "3": "Castle Crush",
+            "4": "Clapper's Cavern",
+            "5": "Chain Link Chamber",
+            "6": "Toxic Tower",
+            "7": "Stronghold Showdown"
+        }
     },
     "7": {
-        "1": "Screech's Sprint",
-        "2": "K. Rool Duel"
+        "name": "The Flying Krock",
+        "levels": {
+            "1": "Screech's Sprint",
+            "2": "K. Rool Duel"
+        }
     }
 }

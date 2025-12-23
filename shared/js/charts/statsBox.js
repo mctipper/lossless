@@ -1,4 +1,4 @@
-export function buildStatsBox(attemptModels) {
+export function buildStatsBox(attemptModels, colours) {
     // data wrangling for lhs
     const totalAttempts = attemptModels.length;
     const totalSuccesses = attemptModels.filter(entry => entry.success).length;
@@ -55,14 +55,13 @@ export function buildStatsBox(attemptModels) {
 
     // rhs
     document.getElementById("furthestRunLevelName").textContent = furthestRunLevelName;
-    document.getElementById("furthestWorld").textContent = furthestRun.world || 0;
-    document.getElementById("furthestLevel").textContent = furthestRun.level || 0;
     document.getElementById("occurences").textContent = occurences;
 
     // update the outcome text dynamically (ie. remove negative comments when success ever achieved)
-    const ruinedByElement = document.getElementById("bestAttemptOutcome");
+    const bestAttemptOutcomeElement = document.getElementById("bestAttemptOutcome");
     if (hasSuccess) {
-        ruinedByElement.textContent = "Successfully Completed!"; // change the text completely
+        bestAttemptOutcomeElement.textContent = "Successfully Completed!"; // change the text completely
+        bestAttemptOutcomeElement.style.color = colours['Success'].colour
     } else {
         const deathPlayerElement = document.getElementById("deathPlayer");
         const deathCharacterElement = document.getElementById("deathCharacter");

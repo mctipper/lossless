@@ -26,7 +26,7 @@ import { buildAttemptBar } from './charts/barAttempt.js'
 
 
         // stats box
-        buildStatsBox(attemptModels);
+        buildStatsBox(attemptModels, colours);
 
         // death charts
         buildPiePlayerDeath(attemptModels, colours);

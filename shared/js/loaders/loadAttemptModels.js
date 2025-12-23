@@ -15,18 +15,18 @@ export async function loadAttemptModels(page) {
         const gamesData = await gamesResponse.json();
         const levelsData = await levelsResponse.json();
 
-        const flattenedGamesData = Object.values(gamesData);
-        const attemptModels = flattenedGamesData.map(entry => {
+        const attemptModels = Object.entries(gamesData).map(([attemptKey, entry]) => {
             return new AttemptModel(
+                attemptKey,
                 entry.date,
                 entry.success,
-                entry.world,
-                entry.level,
+                entry.deathLevel,
                 entry.deathPlayer,
                 entry.deathCharacter,
                 levelsData
             );
         });
+
 
         return { attemptModels, levelsData };
     } catch (error) {

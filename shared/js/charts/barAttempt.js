@@ -2,34 +2,40 @@
 function buildLevelAttemptAxis(levelsData) {
     const levelMap = [];
 
-    for (const [world, levels] of Object.entries(levelsData)) {
+    for (const [world, worldObj] of Object.entries(levelsData)) {
         const worldInt = parseInt(world, 10);
-        const numLevels = Object.keys(levels).length;
-        const step = 1 / (numLevels + 1); // equidistant scaling
+        const levelEntries = Object.entries(worldObj.levels);
+        const numLevels = levelEntries.length;
+        const step = 1 / (numLevels + 1);
 
-        // init
+        // world anchor
         levelMap.push({
             world: worldInt.toString(),
             level: '0',
-            name: '',
+            name: worldObj.name,   // world label
             x: parseFloat(`${worldInt}.0`)
         });
 
-        // populate
-        for (let i = 1; i <= numLevels; i++) {
+        // levels
+        for (let i = 0; i < levelEntries.length; i++) {
+            const [levelKey, levelName] = levelEntries[i];
+
             levelMap.push({
                 world: worldInt.toString(),
-                level: i.toString(),
-                name: levelsData[worldInt][i],
-                x: parseFloat((worldInt + i * step).toFixed(3))
+                level: levelKey,
+                name: levelName,
+                x: parseFloat((worldInt + (i + 1) * step).toFixed(3))
             });
         }
     }
+
     return levelMap;
 }
 
+
 export function buildAttemptBar(attemptModels, levelsData, colours, sortedByLevel = false) {
     const levelMap = buildLevelAttemptAxis(levelsData);
+    const maxX = Math.max(...levelMap.map(level => level.x)); // for 'success = true', ensure bar / point can go full length
 
     let modelsForChart = {}
     if (!sortedByLevel) {
@@ -38,8 +44,8 @@ export function buildAttemptBar(attemptModels, levelsData, colours, sortedByLeve
         modelsForChart = [...attemptModels].sort((a, b) => {
             const aLevel = levelMap.find(l => l.world === a.world && l.level === a.level);
             const bLevel = levelMap.find(l => l.world === b.world && l.level === b.level);
-            const aX = aLevel ? aLevel.x : 0;
-            const bX = bLevel ? bLevel.x : 0;
+            const aX = aLevel ? aLevel.x : maxX;
+            const bX = bLevel ? bLevel.x : maxX;
             return bX - aX;
         });
     }
@@ -47,7 +53,7 @@ export function buildAttemptBar(attemptModels, levelsData, colours, sortedByLeve
     // data prep, massage it so can be made use of for both bar and point components of the chart
     const datasets = modelsForChart.map((attempt, index) => {
         const AttemptLevel = levelMap.find(l => l.world === attempt.world && l.level === attempt.level);
-        const maxX = Math.max(...levelMap.map(level => level.x)); // for 'success = true', ensure bar / point can go full length
+        // const maxX = Math.max(...levelMap.map(level => level.x)); // for 'success = true', ensure bar / point can go full length
         const AttemptX = AttemptLevel ? AttemptLevel.x : maxX; // if null, make it full length as success wont have Attempt indicator
 
         const isSuccess = attempt.success;
@@ -59,7 +65,7 @@ export function buildAttemptBar(attemptModels, levelsData, colours, sortedByLeve
                 {
                     x: AttemptX,
                     y: modelsForChart.length - index - 1,
-                    attempt: modelsForChart.length - index,
+                    attempt: attempt.attemptNumber,
                     success: attempt.success,
                     deathPlayer: attempt.deathPlayer,
                     deathCharacter: attempt.deathCharacter,
@@ -95,16 +101,19 @@ export function buildAttemptBar(attemptModels, levelsData, colours, sortedByLeve
                     max: levelMap[levelMap.length - 1]?.x || 10, // extend to last x value as fixed
                     title: {
                         display: true,
-                        text: 'Game Attempt (World-Level)'
+                        text: 'Attempt Depth'
                     },
                     ticks: {
-                        stepSize: 1,
                         callback: (value) => {
-                            // prevent max value from displaying
-                            const maxValue = levelMap[levelMap.length - 1]?.x || 10;
-                            return value === maxValue ? '' : value;
+                            // find a matching world anchor
+                            const worldAnchor = levelMap.find(l => l.x === value && l.level === '0');
+                            if (worldAnchor) {
+                                return worldAnchor.name; // "World 1", "World 2", etc.
+                            }
+                            return ''; // hide decimal ticks
                         }
                     }
+
                 },
                 y: {
                     type: 'category',
@@ -128,7 +137,8 @@ export function buildAttemptBar(attemptModels, levelsData, colours, sortedByLeve
 
                             if (attempt.success) {
                                 return [
-                                    `Attempt: ${attempt.attempt}`
+                                    `Attempt: ${attempt.attempt}`,
+                                    `Level: ${attempt.deathLevelName}`,
                                 ]
                             } else {
                                 return [
@@ -171,12 +181,12 @@ export function buildAttemptBar(attemptModels, levelsData, colours, sortedByLeve
                                 0, Math.PI * 2
                             );
                             ctx.fillStyle = isSuccess
-                                ? successColour
+                                ? colours["Success"].colour
                                 : colours[attempt.deathCharacter].colour || 'gray';
                             ctx.fill();
                             ctx.lineWidth = 3;
                             ctx.strokeStyle = isSuccess
-                                ? successColour
+                                ? colours["Success"].colour
                                 : colours[attempt.deathPlayer].colour || 'gray';
                             ctx.stroke();
                         });

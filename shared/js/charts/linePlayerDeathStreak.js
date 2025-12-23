@@ -22,7 +22,7 @@ export function buildStreakPlot(attemptModels, colours) {
         streakData.push({
             x: index + 1,
             y: score,
-            colour: game.success ? successColour : colours[game.deathPlayer].colour,
+            colour: game.success ? colours["Success"].colour : colours[game.deathPlayer].colour,
             player: game.success ? "Success" : game.deathPlayer,
             streak: currentStreak,
             success: game.success
@@ -63,7 +63,7 @@ export function buildStreakPlot(attemptModels, colours) {
                         borderColor: ctx => {
                             const index = ctx.p1DataIndex;
                             const point = streakData[index];
-                            return point.success ? successColour : colours[point.player].colour || 'gray';
+                            return point.success ? colours["Success"].colour : colours[point.player].colour || 'gray';
                         },
                     },
                     pointBackgroundColor: streakData.map(point =>

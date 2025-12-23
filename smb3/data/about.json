@@ -2,6 +2,6 @@
   "name": "Super Mario Bros. 3",
   "abbreviation": "SMB3",
   "blurb": "Completing Super Mario Bros. 3 in a single run, without losing a life.",
-  "smallText": "Every single level. Every single Hammer Bros.",
+  "smallText": "Every single level. Warp Zone doesn't count.",
   "themeColor": "#b22222"
 }
