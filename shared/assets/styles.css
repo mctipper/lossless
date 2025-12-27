@@ -89,6 +89,12 @@ body {
     /* shift horizontally & vertically */
 }
 
+.landing-card[data-game="smw"] {
+    background-image: url("images/smw.png");
+    background-size: 150%;
+    background-position: 10% 25%;
+}
+
 .landing-card[data-game="smb3"] {
     background-image: url("images/smb3.png");
     background-size: 100%;

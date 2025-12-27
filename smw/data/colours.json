@@ -1,0 +1,17 @@
+{
+  "Mario": {
+    "colour": "#E4000F"
+  },
+  "Luigi": {
+    "colour": "#4cbb17"
+  },
+  "Mogs": {
+    "colour": "green"
+  },
+  "Shag": {
+    "colour": "purple"
+  },
+  "Success": {
+    "colour": "gold"
+  }
+}

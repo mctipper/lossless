@@ -1,0 +1,99 @@
+{
+    "1": {
+        "name": "Yoshi's Island",
+        "levels": {
+            "1": "Yoshi's Island 1",
+            "2": "Yellow Switch Palace",
+            "3": "Yoshi's Island 2",
+            "4": "Yoshi's Island 3",
+            "5": "Yoshi's Island 4",
+            "6": "#1 Iggy's Castle"
+        }
+    },
+    "2": {
+        "name": "Donut Plains",
+        "levels": {
+            "1": "Donut Plains 1",
+            "2": "Donut Secret 1",
+            "3": "Donut Secret House",
+            "4": "Donut Plains 2",
+            "5": "Green Switch Palace",
+            "6": "Donut Ghost Hourse",
+            "7": "Top Secret Area",
+            "8": "Donut Secret 2",
+            "9": "Donut Plains 3",
+            "10": "Donut Plains 4",
+            "11": "#2 Morton's Castle"
+        }
+    },
+    "3": {
+        "name": "Vanilla Dome",
+        "levels": {
+            "1": "Vanilla Dome 1",
+            "2": "Vanilla Secret 1",
+            "3": "Vanilla Dome 2",
+            "4": "Red Switch Palace",
+            "5": "Vanilla Ghost House",
+            "6": "Vanilla Dome 3",
+            "7": "Vanilla Dome 4",
+            "8": "Vanilla Secret 2",
+            "9": "Vanilla Secret 3",
+            "10": "Vanilla Fortress",
+            "11": "#3 Lemmy's Castle"
+        }
+    },
+    "4": {
+        "name": "Butter Bridge",
+        "levels": {
+            "1": "Cheese Bridge Area",
+            "2": "Soda Lake",
+            "3": "Cookie Mountain",
+            "4": "Butter Bridge 1",
+            "5": "Butter Bridge 2",
+            "6": "#4 Ludwig's Castle"
+        }
+    },
+    "5": {
+        "name": "Forest of Illusion",
+        "levels": {
+            "1": "Forest of Illusion 1",
+            "2": "Forest of Illusion 2",
+            "3": "Blue Switch Palace",
+            "4": "Forest of Illusion 3",
+            "5": "Forest Ghost House",
+            "6": "Forest of Illusion 4",
+            "7": "Forest Secret Area",
+            "8": "Forest Fortress",
+            "9": "#5 Roy's Castle"
+        }
+    },
+    "6": {
+        "name": "Chocolate Island",
+        "levels": {
+            "1": "Chocolate Island 1",
+            "2": "Choco-Ghost House",
+            "3": "Chocolate Island 2",
+            "4": "Chocolate Secret",
+            "5": "Chocolate Island 2",
+            "6": "Chocolate Fortress",
+            "7": "Chocolate Island 4",
+            "8": "Chocolate Island 5",
+            "9": "#6 Wendy's Castle"
+        }
+    },
+    "7": {
+        "name": "Valley of Bowser",
+        "levels": {
+            "1": "Sunken Ghost Ship",
+            "2": "Valley of Bowser 1",
+            "3": "Valley of Bowser 2",
+            "4": "Valley Fortress",
+            "5": "Valley Ghost House",
+            "6": "Valley of Bowser 3",
+            "7": "Valley of Bowser 4",
+            "8": "#7 Larry's Castle",
+            "9": "Back Door",
+            "10": "Front Door"
+        }
+    }
+}
