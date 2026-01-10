@@ -1,28 +1,42 @@
 {
     "1": {
-        "date": "2025-01-18",
-        "deathLevel": "2-1",
+        "date": "2026-01-10",
+        "deathLevel": "1-1",
         "deathPlayer": "Shag",
-        "deathCharacter": "Luigi",
+        "deathCharacter": "Mario",
         "success": false
     },
     "2": {
-        "date": "2025-01-18",
-        "deathLevel": "5-Tower",
+        "date": "2026-01-10",
+        "deathLevel": "1-4",
         "deathPlayer": "Mogs",
         "deathCharacter": "Luigi",
         "success": false
     },
     "3": {
-        "date": "2025-01-18",
-        "deathLevel": "6-Fortress 3",
-        "deathPlayer": "Mogs",
+        "date": "2026-01-10",
+        "deathLevel": "1-6",
+        "deathPlayer": "Shag",
         "deathCharacter": "Mario",
         "success": false
     },
     "4": {
-        "date": "2025-01-18",
+        "date": "2026-01-10",
+        "deathLevel": "1-1",
+        "deathPlayer": "Shag",
+        "deathCharacter": "Mario",
+        "success": false
+    },
+        "5": {
+        "date": "2026-01-10",
         "deathLevel": "1-Airship",
+        "deathPlayer": "Shag",
+        "deathCharacter": "Mario",
+        "success": false
+    },
+        "6": {
+        "date": "2026-01-10",
+        "deathLevel": "2-3",
         "deathPlayer": "Shag",
         "deathCharacter": "Mario",
         "success": false
