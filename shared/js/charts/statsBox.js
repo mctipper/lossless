@@ -48,7 +48,7 @@ export function buildStatsBox(attemptModels, colours) {
 
         playerElement.textContent = `${player}: `;
         const deathsSpan = document.createElement("span");
-        deathsSpan.textContent = `${deaths} deaths`;
+        deathsSpan.textContent = `${deaths} death${deaths>1 ? "s" : ""}`;
         playerElement.appendChild(deathsSpan);
         playersContainer.appendChild(playerElement);
     });
