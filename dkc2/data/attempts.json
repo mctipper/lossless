@@ -131,5 +131,26 @@
         "deathPlayer": "Shag",
         "deathCharacter": "Diddy",
         "success": false
+    },
+        "20": {
+        "date": "2026-01-10",
+        "deathLevel": "Krow's Nest",
+        "deathPlayer": "Shag",
+        "deathCharacter": "Diddy",
+        "success": false
+    },
+        "21": {
+        "date": "2026-01-10",
+        "deathLevel": "Squawk's Shaft",
+        "deathPlayer": "Shag",
+        "deathCharacter": "Diddy",
+        "success": false
+    },
+        "22": {
+        "date": "2026-01-10",
+        "deathLevel": "Barrel Bayou",
+        "deathPlayer": "Shag",
+        "deathCharacter": "Diddy",
+        "success": false
     }
 }
