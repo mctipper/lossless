@@ -1,30 +1,23 @@
 {
     "1": {
-        "date": "2025-01-18",
-        "deathLevel": "Yoshi's Island 4",
+        "date": "2026-01-10",
+        "deathLevel": "Donut Plains 1",
         "deathPlayer": "Shag",
-        "deathCharacter": "Luigi",
+        "deathCharacter": "Mario",
         "success": false
     },
     "2": {
-        "date": "2025-01-18",
-        "deathLevel": "Cheese Bridge Area",
-        "deathPlayer": "Mogs",
-        "deathCharacter": "Luigi",
+        "date": "2026-01-10",
+        "deathLevel": "Yoshi's Island 1",
+        "deathPlayer": "Shag",
+        "deathCharacter": "Mario",
         "success": false
     },
     "3": {
-        "date": "2025-01-18",
-        "deathLevel": "#2 Morton's Castle",
+        "date": "2026-01-10",
+        "deathLevel": "Donut Plains 2",
         "deathPlayer": "Mogs",
-        "deathCharacter": "Mario",
-        "success": false
-    },
-    "4": {
-        "date": "2025-01-18",
-        "deathLevel": "Chocolate Island 4",
-        "deathPlayer": "Shag",
-        "deathCharacter": "Mario",
+        "deathCharacter": "Luigi",
         "success": false
     }
 }
