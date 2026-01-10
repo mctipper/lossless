@@ -1,35 +1,70 @@
 {
     "1": {
-        "date": "2025-01-18",
-        "deathLevel": "3-1",
+        "date": "2026-01-10",
+        "deathLevel": "1-1",
         "deathPlayer": "Shag",
-        "deathCharacter": "Luigi",
+        "deathCharacter": "Mario",
         "success": false
     },
     "2": {
-        "date": "2025-01-18",
-        "deathLevel": "2-1",
-        "deathPlayer": "Mogs",
-        "deathCharacter": "Luigi",
+        "date": "2026-01-10",
+        "deathLevel": "1-2",
+        "deathPlayer": "Shag",
+        "deathCharacter": "Mario",
         "success": false
     },
     "3": {
-        "date": "2025-01-18",
-        "deathLevel": "",
-        "deathPlayer": "",
-        "deathCharacter": "",
-        "success": true
+        "date": "2026-01-10",
+        "deathLevel": "1-2",
+        "deathPlayer": "Shag",
+        "deathCharacter": "Mario",
+        "success": false
     },
     "4": {
-        "date": "2025-01-18",
-        "deathLevel": "8-1",
-        "deathPlayer": "Mogs",
+        "date": "2026-01-10",
+        "deathLevel": "1-2",
+        "deathPlayer": "Shag",
         "deathCharacter": "Mario",
         "success": false
     },
     "5": {
-        "date": "2025-01-18",
-        "deathLevel": "5*-4",
+        "date": "2026-01-10",
+        "deathLevel": "1-2",
+        "deathPlayer": "Mogs",
+        "deathCharacter": "Luigi",
+        "success": false
+    },
+    "6": {
+        "date": "2026-01-10",
+        "deathLevel": "2-3",
+        "deathPlayer": "Shag",
+        "deathCharacter": "Mario",
+        "success": false
+    },
+    "7": {
+        "date": "2026-01-10",
+        "deathLevel": "1-1",
+        "deathPlayer": "Shag",
+        "deathCharacter": "Mario",
+        "success": false
+    },
+    "8": {
+        "date": "2026-01-10",
+        "deathLevel": "1-4",
+        "deathPlayer": "Shag",
+        "deathCharacter": "Mario",
+        "success": false
+    },
+    "9": {
+        "date": "2026-01-10",
+        "deathLevel": "2-4",
+        "deathPlayer": "Shag",
+        "deathCharacter": "Mario",
+        "success": false
+    },
+    "10": {
+        "date": "2026-01-10",
+        "deathLevel": "1-1",
         "deathPlayer": "Shag",
         "deathCharacter": "Mario",
         "success": false
