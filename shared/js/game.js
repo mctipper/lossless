@@ -6,7 +6,6 @@ import { buildStatsBox } from './charts/statsBox.js'
 import { buildPiePlayerDeath } from './charts/piePlayerDeath.js'
 import { buildPieCharacterDeath } from './charts/pieCharacterDeath.js'
 import { buildPlayerCharacterDeathBarChart } from './charts/barPlayerCharacterDeath.js'
-import { buildStreakPlot } from './charts/linePlayerDeathStreak.js'
 import { buildAttemptBar } from './charts/barAttempt.js'
 
 (async function game() {
@@ -32,9 +31,6 @@ import { buildAttemptBar } from './charts/barAttempt.js'
         buildPiePlayerDeath(attemptModels, colours);
         buildPieCharacterDeath(attemptModels, colours);
         buildPlayerCharacterDeathBarChart(attemptModels, colours);
-
-        // death streak
-        buildStreakPlot(attemptModels, colours);
 
         // game attempt
         buildAttemptBar(attemptModels, levelsData, colours);
