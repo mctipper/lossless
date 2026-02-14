@@ -9,4 +9,6 @@ Because data and because we want to remember how well we did (also who ends the 
    
 Vanilla web dev structure. Hosted on my [github pages](https://mctipper.github.io/lossless) because easy.
 
-For local dev just open live server on port and then simply navigate to said port on localhost
+For local dev just open live server on port and then simply navigate to said port on localhost.
+
+Purposefully kept basic as wanted an excuse to play with 'templating', so have a single structure which is then reused by 'subpages' just with a html wrapper and json files.  
