@@ -23,6 +23,11 @@ export function buildPieCharacterDeath(attemptModels, colours) {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: true,
+            aspectRatio: 1,
+            animation: {
+                duration: 0
+            },
             plugins: {
                 legend: {
                     display: false,
