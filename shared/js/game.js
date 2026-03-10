@@ -36,6 +36,9 @@ import { buildAttemptBar } from './charts/barAttempt.js'
         buildAttemptBar(attemptModels, levelsData, colours);
         buildAttemptBar(attemptModels, levelsData, colours, true);
 
+        // remove once loaded
+        document.body.removeAttribute('v-cloak');
+
     } catch (error) {
         console.error("Error in render script:", error);
     }

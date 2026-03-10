@@ -1,3 +1,8 @@
+[v-cloak] {
+    /* blank until loaded */
+    display: none !important;
+}
+
 body {
     font-family: Arial, sans-serif;
 }
