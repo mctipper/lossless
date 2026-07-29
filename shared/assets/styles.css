@@ -3,8 +3,107 @@
     display: none !important;
 }
 
+:root {
+    --accent: #b22222;
+}
+
 body {
     font-family: Arial, sans-serif;
+}
+
+/* game header */
+.game-header {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1.5rem 2.5rem;
+}
+
+.game-header__frame {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    padding: 1.75rem 2.25rem;
+    text-align: left;
+}
+
+.game-header__frame::before,
+.game-header__frame::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 3px solid var(--accent);
+    opacity: 0.85;
+}
+
+.game-header__frame::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.game-header__frame::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+.game-header__eyebrow {
+    display: inline-block;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.game-header__title {
+    margin: 0 0 0.75rem;
+    font-family: 'Space Grotesk', Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.75rem, 1rem + 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #1c1c1c;
+}
+
+.game-header__subtitle {
+    max-width: 46ch;
+    margin: 0 0 1rem;
+    font-size: 1.05rem;
+    color: #3a3a3a;
+}
+
+.game-header__meta {
+    margin: 0;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #767676;
+}
+
+.game-header__meta::before {
+    content: "› ";
+    font-style: normal;
+    color: var(--accent);
+}
+
+@media (max-width: 480px) {
+    .game-header {
+        padding: 2rem 1rem 1.75rem;
+    }
+
+    .game-header__frame {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .game-header__frame::before,
+    .game-header__frame::after {
+        width: 16px;
+        height: 16px;
+    }
 }
 
 /* landing */
@@ -114,31 +213,23 @@ body {
 
 /* general */
 
-.jumbotron {
-    text-align: center;
-}
-
-@media (max-width: 600px) {
-    .jumbotron {
-        transform: scale(0.85);
-        transform-origin: top center;
-        margin-bottom: -20px;
-        /* pulls content up to compensate */
-    }
-}
-
-.parent-container {
-    display: flex;
-}
-
 .display-row {
     padding: 16px;
     background-color: white;
     border: 1px solid #ddd;
+    border-top: 3px solid var(--accent);
     margin: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 100%;
+}
+
+.attempt-heading {
+    font-family: 'Space Grotesk', Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: #1c1c1c;
 }
 
 @media (max-width: 768px) {
@@ -182,7 +273,13 @@ span {
 /* statsbox */
 .card {
     border: none !important;
-    /* override card default */
+    border-radius: 8px;
+}
+
+.card-title,
+.card-subtitle {
+    font-family: 'Space Grotesk', Arial, sans-serif;
+    font-weight: 700;
 }
 
 .card-title {

@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lossless {game}</title>
     <link rel="stylesheet" href="shared/assets/styles.css">
+
+    <!-- Fonts: pixel eyebrow tag + grotesk display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
@@ -15,12 +22,14 @@
 </head>
 
 <body>
-    <div class="jumbotron">
-        <h1 class="display-4">Lossless {game}</h1>
-        <p class="lead">Publically documenting the shame of our struggles in completing the below games in full without losing a single life.</i></p>
-        <p class="lead">Glitchless. Hackless. Skillless.</i></p>
-        <small>We're not very good.</small>
-    </div>
+    <header class="game-header">
+        <div class="game-header__frame">
+            <span class="game-header__eyebrow">Futile Attempts</span>
+            <h1 class="game-header__title">Lossless {game}</h1>
+            <p class="game-header__subtitle">Publically documenting the shame of our struggles in completing the below games in full without losing a single life. Glitchless. Hackless. Skillless.</p>
+            <p class="game-header__meta">We're not very good.</p>
+        </div>
+    </header>
     <div class="container">
         <div class="landing-card-grid">
             <a class="landing-card" data-game="dkc2" href="game.html#dkc2">

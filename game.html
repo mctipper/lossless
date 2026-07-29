@@ -9,6 +9,12 @@
     <!-- Shared Styles -->
     <link rel="stylesheet" href="shared/assets/styles.css">
 
+    <!-- Fonts: pixel eyebrow tag + grotesk display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
@@ -20,12 +26,15 @@
 
 <body v-cloak>
 
-    <!-- Jumbotron (populated by JS) -->
-    <div class="jumbotron">
-        <h1 class="display-4" id="gameTitle">Lossless {game}</h1>
-        <p class="lead" id="gameSubtitle"></p>
-        <small id="gameSmallText"></small>
-    </div>
+    <!-- Header (populated by JS) -->
+    <header class="game-header">
+        <div class="game-header__frame">
+            <span class="game-header__eyebrow">Cataloging Failure</span>
+            <h1 class="game-header__title" id="gameTitle">Lossless {game}</h1>
+            <p class="game-header__subtitle" id="gameSubtitle"></p>
+            <p class="game-header__meta" id="gameSmallText"></p>
+        </div>
+    </header>
 
     <div class="container">
         <!-- Stats Box -->
