@@ -39,7 +39,7 @@ export function buildAttemptBar(attemptModels, levelsData, colours, sortedByLeve
 
     let modelsForChart = {}
     if (!sortedByLevel) {
-        modelsForChart = attemptModels.reverse(); // reverse the order so the most recent attempt is at the top
+        modelsForChart = [...attemptModels].reverse(); // reverse the order so the most recent attempt is at the top
     } else {
         modelsForChart = [...attemptModels].sort((a, b) => {
             const aLevel = levelMap.find(l => l.world === a.world && l.level === a.level);
