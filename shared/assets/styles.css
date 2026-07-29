@@ -294,3 +294,15 @@ span {
     font-size: 1.2em;
     margin-bottom: 8px;
 }
+
+/* Tooltip */
+.info-tooltip { position: relative; border-bottom: 1px dotted #000; cursor: help; }
+.info-tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute; bottom: 100%; left: 50%;
+    transform: translateX(-50%);
+    background: #333; color: #fff; padding: 5px 8px;
+    border-radius: 4px; font-size: 11px; white-space: nowrap;
+    opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 10;
+}
+.info-tooltip:hover::after { opacity: 1; }
