@@ -1,10 +1,8 @@
 export async function loadGameMeta(page) {
     try {
-        const base = `${page}/data`;
-
         const [aboutRes, coloursRes] = await Promise.all([
-            fetch(`${base}/about.json`),
-            fetch(`${base}/colours.json`)
+            fetch(`${page}/about.json`),
+            fetch(`${page}/colours.json`)
         ]);
 
         if (!aboutRes.ok || !coloursRes.ok) {

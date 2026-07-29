@@ -2,10 +2,8 @@ import { AttemptModel } from '../models/attempt.js';
 
 export async function loadAttemptModels(page) {
     try {
-        const base = `${page}/data`;
-
-        const gamesPath = `${base}/attempts.json`;
-        const levelsPath = `${base}/levels.json`;
+        const gamesPath = `${page}/attempts.json`;
+        const levelsPath = `${page}/levels.json`;
 
         const [gamesResponse, levelsResponse] = await Promise.all([
             fetch(gamesPath),
