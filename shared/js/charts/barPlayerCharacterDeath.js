@@ -1,3 +1,5 @@
+import { labelValueFormatter } from './datalabelHelpers.js';
+
 export function buildPlayerCharacterDeathBarChart(attemptModels, colours) {
     // rem successful attempts because only deaths
     const filteredModels = attemptModels.filter(game => !game.success);
@@ -54,10 +56,7 @@ export function buildPlayerCharacterDeathBarChart(attemptModels, colours) {
                         weight: 'normal',
                         style: 'italic'
                     },
-                    formatter: (value, context) => {
-                        const label = context.chart.data.labels[context.dataIndex];
-                        return `${label}: ${value}`;
-                    }
+                    formatter: labelValueFormatter
                 }
             }
         },
