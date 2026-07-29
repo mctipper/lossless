@@ -69,14 +69,14 @@ export function buildPlayerCharacterDeathBarChart(attemptModels, colours) {
     // Player border
     chart.data.datasets[0].borderColor = playerCharacters.map(label => {
         const [player] = label.split('-');
-        return colours[player].colour || 'gray';
+        return colours[player]?.colour || 'gray';
     });
     chart.data.datasets[0].borderWidth = 4;
 
     // Character fill
     chart.data.datasets[0].backgroundColor = playerCharacters.map(label => {
         const [_, character] = label.split('-');
-        return colours[character].colour || 'gray';
+        return colours[character]?.colour || 'gray';
     });
 
     // Integer x-axis
