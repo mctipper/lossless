@@ -1,14 +1,21 @@
 export async function loadGameMeta(page) {
-    console.log(page);
-    const base = `${page}/data`;
+    try {
+        const base = `${page}/data`;
 
-    const [aboutRes, coloursRes] = await Promise.all([
-        fetch(`${base}/about.json`),
-        fetch(`${base}/colours.json`)
-    ]);
+        const [aboutRes, coloursRes] = await Promise.all([
+            fetch(`${base}/about.json`),
+            fetch(`${base}/colours.json`)
+        ]);
 
-    const about = await aboutRes.json();
-    const colours = await coloursRes.json();
+        if (!aboutRes.ok || !coloursRes.ok) {
+            return undefined;
+        }
 
-    return { about, colours };
+        const about = await aboutRes.json();
+        const colours = await coloursRes.json();
+
+        return { about, colours };
+    } catch (error) {
+        console.error("Error loading game meta:", error);
+    }
 }

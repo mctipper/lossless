@@ -13,8 +13,16 @@ import { buildAttemptBar } from './charts/barAttempt.js'
         const page = getPageName();
 
         // load up the games for THIS page
-        const { attemptModels, levelsData } = await loadAttemptModels(page);
-        const { about, colours } = await loadGameMeta(page);
+        const attemptResult = await loadAttemptModels(page);
+        const metaResult = await loadGameMeta(page);
+
+        if (!attemptResult || !metaResult) {
+            window.location.replace("index.html");
+            return;
+        }
+
+        const { attemptModels, levelsData } = attemptResult;
+        const { about, colours } = metaResult;
 
 
         // update display

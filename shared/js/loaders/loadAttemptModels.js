@@ -12,6 +12,10 @@ export async function loadAttemptModels(page) {
             fetch(levelsPath)
         ]);
 
+        if (!gamesResponse.ok || !levelsResponse.ok) {
+            return undefined;
+        }
+
         const gamesData = await gamesResponse.json();
         const levelsData = await levelsResponse.json();
 
