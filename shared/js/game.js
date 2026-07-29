@@ -3,8 +3,7 @@ import { loadAttemptModels } from './loaders/loadAttemptModels.js';
 import { loadGameMeta } from './loaders/loadGameMeta.js';
 
 import { buildStatsBox } from './charts/statsBox.js'
-import { buildPiePlayerDeath } from './charts/piePlayerDeath.js'
-import { buildPieCharacterDeath } from './charts/pieCharacterDeath.js'
+import { buildPieDeathChart } from './charts/pieDeath.js'
 import { buildPlayerCharacterDeathBarChart } from './charts/barPlayerCharacterDeath.js'
 import { buildAttemptBar } from './charts/barAttempt.js'
 
@@ -36,8 +35,8 @@ import { buildAttemptBar } from './charts/barAttempt.js'
         buildStatsBox(attemptModels, colours);
 
         // death charts
-        buildPiePlayerDeath(attemptModels, colours);
-        buildPieCharacterDeath(attemptModels, colours);
+        buildPieDeathChart(attemptModels, colours, { elementId: "playerPieChart", groupByKey: "deathPlayer", labelColor: "#FFFFFF" });
+        buildPieDeathChart(attemptModels, colours, { elementId: "characterPieChart", groupByKey: "deathCharacter", labelColor: "#000000" });
         buildPlayerCharacterDeathBarChart(attemptModels, colours);
 
         // game attempt
